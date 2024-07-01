@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f2f1;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .header {
+            background-color: #4db6ac;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .profile img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            border-bottom: 4px solid rgba(128, 128, 128, 0.262);
+        }
+
+        .menu div {
+            cursor: pointer;
+            text-align: center;
+            margin-left: 170px;
+            margin-right: 170px;
+        }
+
+        .menu .active {
+            border-bottom: 2px solid #4db6ac;
+            font-weight: bold;
+        }
+
+        .post {
+            background-color: white;
+            padding: 20px;
+            border-bottom: 2px solid rgba(128, 128, 128, 0.404);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .post img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            margin-left: 80px;
+        }
+
+        .post .text {
+            font-weight: bold;
+            font-size: 35px;
+            margin-left: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .post .text .titik {
+            margin-left: 990px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .chat-container {
+            width: 100%;
+            border-top: 2px solid rgba(128, 128, 128, 0.404);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        .chat-box {
+            padding: 50px;
+            background-color: #f0f9f8;
+            height: 360px;
+            overflow-y: scroll;
+        }
+        .chat-box .message {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 10px;
+        }
+        .chat-box .message .text {
+            background-color: #59b7b1;
+            padding: 20px;
+            border-radius: 20px;
+            color: white;
+            max-width: 70%;
+        }
+        .chat-box .message.sent .text {
+            background-color: #c3e8e7;
+            color: #333;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        .input-box {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #d1e7e7;
+        }
+        .input-box input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #e5f5f4;
+        }
+        .input-box button {
+            background-color: #59b7b1;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .nav a:hover{
+            text-decoration: underline;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            padding-left: 90.2px;
+        }
+        .tabs a {
+            margin: 0 200px;
+            color: #2b4441;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+        }
+        .tabs a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-left">
+        <a href="index.html"><img src="gambar/logo-removebg-preview.png"></a>
+        <h1>Serenity</h1>
+    </div>
+    <div class="nav">
+        <a href="mystory.html">Connect with Others</a>
+        <a href="tanya.html">Expert Assistance</a>
+        <a href="didengar.html">Chat Stranger</a>
+        <a href="mental-test.html">Mental Check</a>
+        <div class="profile">
+            <a href="profil.html"><img src="gambar/bebek.png   " alt="profile"></a>
+        </div>
+    </div>
+</div>
+
+<div class="menu">
+    <div class="tabs">
+        <a href="pendengar.html">Pendengar</a>
+        <a href="didengar.html">Didengar</a>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Existing posts --> 
+    <div class="post">
+        <img src="gambar/cat2.jpeg" alt="user">
+        <div class="text">I'm You <img class="titik" src="gambar/titik3.png" alt="tanda titik 3"></div>
+    </div>
+
+    <!-- Chat section -->
+    <div class="chat-container">
+        <div class="chat-box">
+            <div class="message sent">
+                <div class="text">Jadi gimn kondisinya skrng?</div>
+            </div>
+            <div class="message">
+                <div class="text">yh... begitulah... dia berubah sesuai moodnya tanpa perhatiin sekitarnya</div>
+            </div>
+        </div>
+        <div class="input-box">
+            <input type="text" placeholder="Type here...">
+            <button>&#9654;</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function sendMessage() {
+        var input = document.querySelector('.input-box input');
+        if (input.value.trim() !== '') {
+            var chatBox = document.querySelector('.chat-box');
+            var message = document.createElement('div');
+            message.className = 'message sent';
+            message.innerHTML = '<div class="text">' + input.value + '</div>';
+            chatBox.appendChild(message);
+            
+            // Auto reply
+            var autoReply = document.createElement('div');
+            autoReply.className = 'message';
+            autoReply.innerHTML = '<div class="text">Program ini sedang uji coba</div>';
+            chatBox.appendChild(autoReply);
+
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    }
+
+    document.querySelector('.input-box button').addEventListener('click', sendMessage);
+
+    document.querySelector('.input-box input').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    });
+</script>
+
+</body>
+</html>

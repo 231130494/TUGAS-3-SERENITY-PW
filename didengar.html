@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity Chat</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #4db6ac;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            display: inline;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .profile img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 40px); /* Adjusted height to account for header */
+            padding: 0; /* Removed padding to use full screen */
+            box-sizing: border-box;
+        }
+        .chat-box {
+            background-color: white;
+            border-radius: 0; /* Removed border radius to use full screen */
+            box-shadow: none; /* Removed box-shadow to use full screen */
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            position: relative;
+        }
+        .tabs a {
+            margin: 0 200px;
+            color: #2b4441;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+        }
+        .tabs a:hover {
+            text-decoration: underline;
+        }
+        .separator-tabs {
+            border: 0px;
+            height: 3px;
+            background: rgba(17, 17, 17, 0.438);
+            margin: 0 0;
+        }
+        .chat-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            overflow-y: auto;
+        }
+        .chat-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        .chat-item img {
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            margin-right: 10px;
+        }
+        .chat-item .chat-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .chat-item .username {
+            font-weight: bold;
+        }
+        .chat-item .message {
+            color: #555;
+            margin-top: 5px;
+        }
+        .notification {
+            color: #2f8f83;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .tab-notification {
+            position: absolute;
+            top: 4px;
+            left: 70px;
+            right: -10px;
+            height: 10px;
+            width: 10px;
+            background-color: #2f8f83;
+            border-radius: 50%;
+            margin-left: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <a href="index.html"><img src="gambar/logo-removebg-preview.png"></a>
+            <h1>Serenity</h1>
+        </div>
+        <div class="nav">
+            <a href="comment.html">Connect with Others</a>
+            <a href="tanya.html">Expert Assistance</a>
+            <a href="didengar.html">Chat Stranger</a>
+            <a href="mental-test.html">Mental Check</a>
+            <div class="profile">
+                <a href="profil.html"><img src="gambar/bebek.png" alt="profile"></a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="chat-box">
+            <div class="tabs">
+                <a href="pendengar.html">Pendengar</a>
+                <a href="didengar.html" id="didengar-tab">Didengar<span id="didengar-notification" class="tab-notification" style="display: none;"></span></a>
+            </div>
+            <hr class="separator-tabs">
+            <ul class="chat-list">
+                <li class="chat-item" onclick="markAsRead(this)">
+                    <img src="gambar/cat1.jpeg" alt="KtarKtir">
+                    <div class="chat-content">
+                        <span class="username">KtarKtir</span>
+                        <span class="message">Goodluck buat tes nyaa...</span>
+                    </div>
+                    <span class="notification">1</span>
+                </li>
+                <li class="chat-item" onclick="markAsRead(this)">
+                    <img src="gambar/cat3.jpeg" alt="ComeMelt">
+                    <div class="chat-content">
+                        <span class="username">ComeMelt</span>
+                        <span class="message">Thank youu</span>
+                    </div>
+                    <span class="notification"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function markAsRead(element) {
+            var notification = element.querySelector('.notification');
+            if (notification && notification.innerText.trim() !== "") {
+                notification.remove();
+            }
+            checkNotifications();
+        }
+
+        function checkNotifications() {
+            var notifications = document.querySelectorAll('.chat-item .notification');
+            var didengarNotification = document.getElementById('didengar-notification');
+            var hasNotifications = false;
+            notifications.forEach(function(notification) {
+                if (notification.innerText.trim() !== "") {
+                    hasNotifications = true;
+                }
+            });
+            if (hasNotifications) {
+                didengarNotification.style.display = 'block';
+            } else {
+                didengarNotification.style.display = 'none';
+            }
+        }
+
+        // Initial check for notifications
+        checkNotifications();
+    </script>
+</body>
+</html>

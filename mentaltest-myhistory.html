@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: sans-serif;
+            height: 100vh; /* make body full height */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #4db6ac;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            display: inline;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        
+        .nav a:hover{
+            text-decoration: underline;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .profile img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        .container {
+            flex: 1; /* make container take up remaining space */
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px 50px;
+            border-bottom: 4px solid rgba(128, 128, 128, 0.262);
+        }
+
+        .menu a {
+            cursor: pointer;
+            text-align: center;
+            margin-left: 170px;
+            margin-right: 170px;
+            text-decoration: none;
+            font-weight: bold;
+            color: rgb(56, 53, 53);
+        }
+
+        .menu a:hover {
+            border-bottom: 2px solid #4db6ac;
+            text-decoration: underline;
+        }
+        .separator-tabs {
+            border: 0px;
+            height: 3px;
+            background: rgba(17, 17, 17, 0.438);
+            margin: 0 0;
+        }
+        
+
+        .list-group {
+            list-style: none;
+            padding: 0;
+        }
+
+        .list-group-item {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #1f64bd;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<div class="header">
+    <div class="header-left">
+        <a href="homepage.html"><img src="gambar/logo-removebg-preview.png"></a>
+        <h1>Serenity</h1>
+    </div>
+    <div class="nav">
+        <a href="mystory.html">Connect with Others</a>
+        <a href="expertassist.html">Expert Assistance</a>
+        <a href="didengar.html">Chat Stranger</a>
+        <a href="mental-test.html">Mental Check</a>
+        <div class="profile">
+            <a href="profil.html"><img src="gambar/bebek.png   " alt="profile"></a>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        <div class="menu">
+            <a href="mental-test.html">Test</a>
+            <a href="me">My History</a>
+        </div>
+        <hr class="separator-tabs">
+        <div id="my-history-content">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span>MBTI Test Result</span>
+                    <a href="#" class="nav-link">See detail</a>
+                </li>
+                <li class="list-group-item">
+                    <span>ADHD Test Result</span>
+                    <a href="#" class="nav-link">See detail</a>
+                </li>
+                <li class="list-group-item">
+                    <span>Stress Check Result</span>
+                    <a href="#" class="nav-link">See detail</a>
+                </li>
+            </ul>
+            </div>
+    
+            <div id="test-content">
+                <!-- no content -->
+            </div>
+        </div>
+    
+        <script>
+            const menuLinks = document.querySelectorAll('.menu-link');
+            const contentDivs = document.querySelectorAll('.container > div:not(.nav):not(.menu)');
+    
+            menuLinks.forEach((link, index) => {
+                link.addEventListener('click', () => {
+                    contentDivs.forEach((div) => {
+                        div.style.display = 'none';
+                    });
+                    contentDivs[index].style.display = 'block';
+                });
+            });
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .header {
+            background-color: #4db6ac;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            justify-content: space-between;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            display: inline;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .nav a:hover{
+            text-decoration: underline;
+        }
+        
+        .container {
+            flex: 1;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .doctor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+            width: 80%;
+            height : 135px;
+        }
+        .doctor img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+        }
+        .doctor-info {
+            flex: 1;
+            text-align: left;
+            margin-left: 20px;
+        }
+        .rating, .availability {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .doctor-info img.gmbr{
+            width: 25px;
+            height: 25px;
+        }
+        button {
+            width: 200px;
+            margin: 15px 0;
+            padding: 10px;
+            font-size: 15px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            cursor: pointer;
+            background: lightgray;
+        }
+        .profile img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+        
+        .btn{   
+            background-color: rgb(44, 120, 115);
+            color: white;
+        }
+        .btn:hover{
+            background-color: rgb(74, 193, 185);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <a href="homepage.html"><img src="gambar/logo-removebg-preview.png"></a>
+            <h1>Serenity</h1>
+        </div>
+        <div class="nav">
+            <a href="comment.html">Connect with Others</a>
+            <a href="tanya.html">Expert Assistance</a>
+            <a href="didengar.html">Chat Stranger</a>
+            <a href="mental-test.html">Mental Check</a>
+            <div class="profile">
+                <a href="profil.html"><img src="gambar/bebek.png" alt="profile"></a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Siapa tahu ada yang lebih tau nih. Coba kita tanya ke ahlinya yuk!</h2>
+        <div class="doctor">
+            <a href="chatdoc.html"><img src="gambar/doc1.png" alt="Dr. Avery Cure"></a>
+            <div class="doctor-info">
+                <h3>Dr. Avery Cure</h3>
+                <div>
+                    <span class="rating">⭐ 4.9</span>
+                    <img src="gambar/availability.png" class="gmbr"><span class="availability">Availability</span>
+                </div>
+            </div>
+            <button class="btn">Subscribe</button>
+        </div>
+        <div class="doctor">
+            <img src="gambar/doc2.png" alt="Dr. Alexander Chen">
+            <div class="doctor-info">
+                <h3>Dr. Alexander Chen</h3>
+                <div>
+                    <span class="rating">⭐ 4.2</span>
+                    <img src="gambar/availability.png" class="gmbr"><span class="availability">Availability</span>
+                </div>
+            </div>
+            <button class="btn">Subscribe</button>
+        </div>
+        <div class="doctor">
+            <img src="gambar/doc3.png" alt="Dr. Naira Cahya">
+            <div class="doctor-info">
+                <h3>Dr. Naira Cahya</h3>
+                <div>
+                    <span class="rating">⭐ 4.6</span>
+                    <img src="gambar/availability.png" class="gmbr"><span class="availability">Availability</span>
+                </div>
+            </div>
+            <button class="btn">Subscribe</button>
+        </div>
+    </div>
+    <script>
+         document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(event){
+                window.location.href = "subscribe.html";
+            });
+        });
+    </script>
+</body>
+</html>

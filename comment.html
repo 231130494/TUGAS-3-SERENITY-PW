@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f2f1;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .header {
+            background-color: #4db6ac;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            display: inline;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .nav a:hover{
+            text-decoration: underline;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .profile img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            background-color: #b2dfdb;
+            padding: 10px 50px;
+            border-bottom: 4px solid rgba(128, 128, 128, 0.262);
+        }
+
+        .menu a {
+            cursor: pointer;
+            text-align: center;
+            margin-left: 170px;
+            margin-right: 170px;
+            text-decoration: none;
+            font-weight: bold;
+            color: rgb(56, 53, 53);
+        }
+
+        .menu a:hover {
+            border-bottom: 2px solid #4db6ac;
+            text-decoration: underline;
+        }
+
+        .post {
+            background-color: white;
+            padding: 30px;
+            border-bottom: 2px solid rgba(128, 128, 128, 0.404);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .post img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin-right: 15px;
+        }
+
+        .post .user {
+            font-weight: bold;
+        }
+
+        .post .user span {
+            color: gray;
+        }
+
+        .post .text {
+            margin-top: 10px;
+        }
+
+        .post .stats {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post .stats .info {
+            display: flex;
+            align-items: center;
+        }
+
+        .post .stats .info .count {
+            display: flex;
+            align-items: center;
+        }
+
+        .post .stats .info .komen {
+            width: 20px;
+            height: 20px;
+            margin-left: 70px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .post .stats .info .lihat {
+            width: 20px;
+            height: 20px;
+            margin-left: 30px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .container {
+            max-height: calc(100vh); /* Adjust based on header and menu heights */
+            overflow-y: auto;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-left">
+        <a href="index.html"><img src="gambar/logo-removebg-preview.png"></a>
+        <h1>Serenity</h1>
+    </div>
+    <div class="nav">
+        <a href="comment.html">Connect with Others</a>
+        <a href="tanya.html">Expert Assistance</a>
+        <a href="didengar.html">Chat Stranger</a>
+        <a href="mental-test.html">Mental Check</a>
+        <div class="profile">
+            <a href="profil.html"><img src="gambar/bebek.png   " alt="profile"></a>
+        </div>
+    </div>
+</div>
+<div class="menu">
+    <a href="mystory.html">My Story</a>
+    <a href="comment.html">Response Others</a>
+</div>
+
+<div class="container">
+    <!-- Existing posts -->
+    <div class="post">
+        <img src="gambar/cat2.jpeg" alt="user">
+        <div class="user">I'm you - <span>15m</span></div>
+        <div class="text">Aku tadi baca sebuah artikel yg menarik. Simple sih kelihatannya tapi nyess nya itu lohh......</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>5</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>10</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post">
+        <img src="gambar/cat1.jpeg" alt="user">
+        <div class="user">KtarKtir - <span>20m</span></div>
+        <div class="text">Siapa ngira mancing nga harus di air? bisa lewat emosi soalnya hehehehehehehe</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>2</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>50</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="post come-melt">
+        <img src="gambar/cat3.jpeg" alt="user">
+        <div class="user">ComeMelt - <span>29m</span></div>
+        <div class="text">Ada yang punya rekomen buku untuk mengenal emosi-emosi nga??</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>55</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>125</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="post come-melt">
+        <img src="gambar/cat4.jpeg" alt="user">
+        <div class="user">Ameng - <span>30m</span></div>
+        <div class="text">Kamu Ngakpapa?</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>15</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>1.250</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/cat5.jpeg" alt="user">
+        <div class="user">Meong - <span>34m</span></div>
+        <div class="text">Rekomendasikan buku tentang kesehatan mental dongg! </div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>18</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>1980</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/cat6.jpeg" alt="user">
+        <div class="user">Inu - <span>35m</span></div>
+        <div class="text">wahhhh,kok agak nyesek ya</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>68</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>5.081</div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/cat7.jpeg" alt="user">
+        <div class="user">Oreo - <span>1j</span></div>
+        <div class="text">Hello Semua nya</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>55</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>6.784</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/sowryy_^.jpeg" alt="user">
+        <div class="user">Kenko - <span>1j</span></div>
+        <div class="text">Hidup itu berat yaa</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>99</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>4.870</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/grandpa.jpeg" alt="user">
+        <div class="user">Pear - <span>2j</span></div>
+        <div class="text">Siapa yang mau curhat??</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>1.000</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>4.899</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/penguin.jpeg" alt="user">
+        <div class="user">Baby - <span>2j</span></div>
+        <div class="text">Berat yaa</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>1</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/cat8.jpeg" alt="user">
+        <div class="user">Fana - <span>5j</span></div>
+        <div class="text">Saya ingin hidup seperti siscakohl</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>15.000</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>28.658</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/hamster.jpeg" alt="user">
+        <div class="user">Jowo - <span>5j</span></div>
+        <div class="text">Tidur aja la</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>0</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>10</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/cat9.jpeg" alt="user">
+        <div class="user">Curhat - <span>6j</span></div>
+        <div class="text">Dunia kenapa kamu kejam sekalii</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>190</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>5.788</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/hold up I'm thinking.jpeg" alt="user">
+        <div class="user">Moiuse - <span>6j</span></div>
+        <div class="text">Healing Guys</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>754</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>14.759</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="/gambargirl1.jpeg" alt="user">
+        <div class="user">Barbie - <span>7j</span></div>
+        <div class="text">Rekomendasikan Psikolog yang paling baik dan ganteng</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>1.000</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>10.578</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/sinchan.jpeg" alt="user">
+        <div class="user">Apa aja la - <span>7j</span></div>
+        <div class="text">Donasi nya kak buat konsultasi ,Dana : 0813-716-2950</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>1</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>70</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/Cute Duck.jpeg" alt="user">
+        <div class="user">Cow - <span>8j</span></div>
+        <div class="text">waktu berlalu terlalu cepat</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>150</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>9.680</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/Toothless.jpeg" alt="user">
+        <div class="user">Dragon - <span>8j</span></div>
+        <div class="text">Aku sangat ingin terbang ke langit</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>130</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>13.000</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cloned posts for ComeMelt -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var container = document.querySelector('.container');
+            var comeMeltPost = document.querySelector('.come-melt');
+
+            // Smooth scrolling to top when clicked on menu items
+            var menuItems = document.querySelectorAll('.menu div');
+            menuItems.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</div>
+
+</body>
+</html>

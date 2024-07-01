@@ -1,0 +1,428 @@
+<html lang="en">
+    <!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity App</title>
+    <style>
+        *{
+            font-family: 'Poppins',sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .header {
+            background-color: #4db6ac;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            display: inline;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .nav a:hover{
+            text-decoration: underline;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .profile img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            background-color: #b2dfdb;
+            padding: 10px 50px;
+            border-bottom: 4px solid rgba(128, 128, 128, 0.262);
+        }
+
+        .menu a:hover {
+            border-bottom: 2px solid #4db6ac;
+            text-decoration: underline;
+        }
+        .menu a {
+        cursor: pointer;
+        text-align: center;
+        margin-left: 170px;
+        margin-right: 170px;
+        text-decoration: none;
+        font-weight: bold;
+        color: rgb(56, 53, 53);}
+
+        .menu .active {
+            border-bottom: 2px solid #4db6ac;
+            font-weight: bold;
+        }
+
+        .post {
+            background-color: white;
+            padding: 30px;
+            border-bottom: 2px solid rgba(128, 128, 128, 0.404);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .post img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin-right: 15px;
+        }
+
+        .post .user {
+            font-weight: bold;
+        }
+
+        .post .user span {
+            color: gray;
+        }
+
+        .post .text {
+            margin-top: 10px;
+        }
+
+        .post .stats {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post .stats .info {
+            display: flex;
+            align-items: center;
+        }
+
+        .post .stats .info .count {
+            display: flex;
+            align-items: center;
+        }
+
+        .post .stats .info .komen {
+            width: 20px;
+            height: 20px;
+            margin-left: 70px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .post .stats .info .lihat {
+            width: 20px;
+            height: 20px;
+            margin-left: 30px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .container {
+            max-height: calc(100vh - 160px); /* Adjust based on header and menu heights */
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .add-icon {
+            position: fixed;
+            bottom: 45px; /* Adjust as needed */
+            right: 40px; /* Adjust as needed */
+            z-index: 1000; /* Ensure it's above other content */
+        }
+
+        .add-icon img {
+            width: 52px; /* Adjust the size of the icon */
+            height: 50px; /* Adjust the size of the icon */
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #41877e;
+            padding: 10px;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1500; /* Higher than add-icon */
+        }
+
+        .prompt {
+            background-color: white;
+            border-radius: 40px;
+            width: 90%;
+            max-width: 1700px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1600; /* Higher than overlay */
+        }
+
+        .prompt-header {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            padding: 20px 10px;
+            border-radius: 25px;
+            background-color: #4db6ac; /* Warna latar belakang yang diinginkan */
+        }
+
+        .prompt-header img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .prompt-header h2 {
+            margin: 0;
+            font-size: 30px;
+            color: white; /* Warna teks yang diinginkan */
+        }
+
+        .prompt textarea {
+            width: 100%;
+            height: 500px;
+            font-size: 30px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            resize: none;
+            outline: none;
+        }
+
+        .prompt-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .prompt-footer .icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .prompt-footer .icons i {
+            font-size: 20px;
+            color: #3f8f8a;
+            cursor: pointer;
+        }
+
+        .prompt-footer button {
+            background-color: #3f8f8a;
+            color: white;
+            border: none;
+            padding: 20px 30px;
+            border-radius: 50px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-left">
+        <a href="index.html"><img src="gambar/logo-removebg-preview.png"></a>
+        <h1>Serenity</h1>
+    </div>
+    <div class="nav">
+        <a href="mystory.html">Connect with Others</a>
+        <a href="tanya.html">Expert Assistance</a>
+        <a href="didengar.html">Chat Stranger</a>
+        <a href="mental-test.html">Mental Check</a>
+        <div class="profile">
+            <a href="profil.html"><img src="gambar/bebek.png   " alt="profile"></a>
+        </div>
+    </div>
+</div>
+
+<div class="menu">
+    <a href="mystory.html">My Story</a>
+    <a href="comment.html">Response Others</a>
+</div>
+
+<div class="container">
+    <!-- Existing posts -->
+    <div class="post">
+        <img src="gambar/bebek.png" alt="user">
+        <div class="user">bebek not duck - <span>1j</span></div>
+        <div class="text">hmmmm,makin bingungg</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>5</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>10</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post">
+        <img src="gambar/bebek.png" alt="user">
+        <div class="user">bebek not duck - <span>2j</span></div>
+        <div class="text">Haloo semua... Jadi hari ini aku mau sedikit sharing soal hal-hal yang baru aja terjadi denganku dan itu bener-bener di luar prediksi BMKG. Siapa mengira gitu loh......</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>221</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>554</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/bebek.png" alt="user">
+        <div class="user">bebek not duck - <span>10j</span></div>
+        <div class="text">Tau gak sih? MBTI tidak terlalu dapat dipercayai karena ada yang menjawabnya dengan berpikir keras, memungkinkan untuk dimanipulasi. Selain itu, MBTI juga tidak bisa diduga karena tidak semua orang menunjukkan kepribadian mereka langsung.</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>101</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>2.000</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/bebek.png" alt="user">
+        <div class="user">bebek not duck - <span>1h</span></div>
+        <div class="text">Web nya bagus</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="gambar/logo komen.png" alt="comments">
+                    <div>1</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="gambar/logo views.png" alt="views">
+                    <div>20</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post come-melt">
+        <img src="gambar/bebek.png" alt="user">
+        <div class="user">bebek not duck - <span>3h</span></div>
+        <div class="text">tesss</div>
+        <div class="stats">
+            <div class="info">
+                <div class="count">
+                    <img class="komen" src="https://via.placeholder.com/20" alt="comments">
+                    <div>1</div>
+                </div>
+                <div class="count">
+                    <img class="lihat" src="https://via.placeholder.com/20" alt="views">
+                    <div>20</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Icon tambah -->
+    <div class="add-icon" id="tombol-tambah">
+        <img src="gambar/logo tmbh.png" alt="Add">
+    </div>
+
+    <!-- Overlay dan prompt -->
+    <div class="overlay" id="overlay">
+        <div class="prompt">
+            <div class="prompt-header">
+                <img src="gambar/logo-removebg-preview.png" alt="Profile Picture">
+                <h2>SERENITY</h2>
+            </div>
+            <textarea placeholder="Text Your Story..."></textarea>
+            <div class="prompt-footer">
+                <div class="icons">
+                    <i class="fa fa-smile"></i>
+                    <i class="fa fa-image"></i>
+                    <i class="fa fa-paperclip"></i>
+                </div>
+                <button onclick="hidePrompt()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Smooth scrolling to top when clicked on menu items
+    var menuItems = document.querySelectorAll('.menu div');
+    menuItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+
+    // Tambahkan event listener untuk tombol "Tambah"
+    var tambahButton = document.getElementById('tombol-tambah');
+    tambahButton.addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'flex';
+    });
+
+    // Fungsi untuk menyembunyikan prompt
+    function hidePrompt() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
