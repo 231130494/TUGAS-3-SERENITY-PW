@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity App</title>
+    <style>
+        *{
+            font-family: 'Poppins',sans-serif;
+        }
+        body {
+            background-color: #e6f2f1;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }   
+
+        .header {
+            background-color: #4db6ac;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            justify-content: space-between;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Menaikkan z-index untuk memastikan header di atas konten lain */
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            display: inline;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 1000; /* Menaikkan z-index untuk memastikan menu navigasi di atas konten lain */
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .nav a:hover{
+            text-decoration: underline;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            z-index: 1000; /* Menaikkan z-index untuk memastikan foto profil di atas konten lain */
+        }
+
+        .profile img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        .banner-container {
+            max-width: 100%;
+            max-height: 200px;
+            background-color: #008080;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 5px solid whitesmoke;
+            margin-top: 55px; /* Menggeser konten ke bawah untuk memberikan ruang pada header */
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .upload-btn-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .upload-btn {
+            background-color: #ffffff;
+            color: #008080;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .upload-btn:hover {
+            background-color: #008080;
+            color: white;
+        }
+
+        .profile-asep {
+            position: absolute;
+            bottom: 410px; /* Menyesuaikan dengan tinggi gambar profil */
+            left: 25px;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+            cursor: pointer; /* Menambahkan kursor pointer untuk menunjukkan area bisa diklik */
+        }
+
+        .profile-form {
+            max-width: 100%;
+            height: 100%;
+            padding: 80px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cogan {
+            margin-left: 30px;
+            font-size: 20px;
+        }
+
+        .profile-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .profile-form input[type="text"],
+        .profile-form input[type="password"] {
+            width: calc(95% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid green;
+            border-radius: 5px;
+        }
+
+        .profile-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .profile-buttons button {
+            padding: 20px 70px;
+            border: none;
+            border-radius: 50px;
+            border: 2px solid gray;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-story {
+            background-color: #90EE90;
+            color: black;
+        }
+
+        .btn-payment {
+            background-color: #90EE90;
+            color: black;
+        }
+
+        .btn-favorite {
+            background-color: #90EE90;
+            color: black;
+        }
+
+        .btn-reset {
+            background-color: #ADD8E6;
+            color: black;
+        }
+
+        .btn-logout {
+            background-color: #F08080;
+            color: black;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-left">
+        <a href="index.html"><img src="gambar/logo-removebg-preview.png"></a>
+        <h1>Serenity</h1>
+    </div>
+    <div class="nav">
+        <a href="comment.html">Connect with Others</a>
+        <a href="tanya.html">Expert Assistance</a>
+        <a href="didengar.html">Chat Stranger</a>
+        <a href="http://127.0.0.1:5500/mental-test.html">Mental Check</a>
+        <div class="profile">
+            <a href="profil.html"><img src="gambar/bebek.png" alt="profile"></a>
+        </div>
+    </div>
+</div>
+
+<div class="banner-container">
+    <img class="banner-image" src="gambar/foto 1200 x 200.png" alt="Banner Image">
+    <div class="upload-btn-container">
+        <button class="upload-btn">Change Banner</button>
+        <input type="file" id="bannerFileInput" style="display: none;">
+    </div>
+</div>
+
+<img id="profileImage" class="profile-asep" src="gambar/bebek.png" alt="Profile Image">
+
+<div class="profile-form">
+    <h2 class="cogan">My Profile</h2>
+    <label class="cogan" for="username">Username</label>
+    <input class="cogan" type="text" id="username" value="bebek not duck">
+    <label class="cogan" for="password">Password</label>
+    <input class="cogan" type="password" id="password" value="*****" readonly>
+
+    <div class="profile-buttons">
+        <a href="mystory.html"><button class="btn-story">My Story</button></a>
+        <button class="btn-payment">Payment</button>
+        <button class="btn-favorite">Favorite</button>
+        <a href="forgotpass.html"><button class="btn-reset">Reset Password</button></a>
+        <a href="SERENITY.html"><button class="btn-logout">Log Out</button></a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const bannerUploadBtn = document.querySelector('.upload-btn');
+        const bannerFileInput = document.getElementById('bannerFileInput');
+        const profileImage = document.getElementById('profileImage');
+        const passwordInput = document.getElementById('password');
+
+        bannerUploadBtn.addEventListener('click', function() {
+            bannerFileInput.click();
+        });
+
+        bannerFileInput.addEventListener('change', function(event) {
+            loadBannerImage(event);
+        });
+
+        function loadBannerImage(event) {
+            var image = document.querySelector('.banner-image');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        }
+
+        const profileFileInput = document.createElement('input');
+        profileFileInput.setAttribute('type', 'file');
+        profileFileInput.style.display = 'none';
+        profileFileInput.addEventListener('change', function(event) {
+            loadProfileImage(event);
+        });
+
+        function loadProfileImage(event) {
+            var image = document.getElementById('profileImage');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        }
+
+        profileImage.addEventListener('dblclick', function() {
+            profileFileInput.click(); // Buka dialog pilih file saat double click pada gambar profil
+        });
+
+        // Button listeners
+        const resetBtn = document.querySelector('.btn-reset');
+
+        resetBtn.addEventListener('click', function() {
+            // Simulate changing password (in real scenario this should be handled securely)
+            passwordInput.removeAttribute('readonly'); // Menghapus atribut readonly
+            passwordInput.value = ''; // Mengosongkan nilai input password
+            passwordInput.setAttribute('placeholder', 'Enter new password'); // Placeholder for new password
+            passwordInput.focus(); // Focus on the password input
+        });
+    });
+</script>
+
+</body>
+</html>

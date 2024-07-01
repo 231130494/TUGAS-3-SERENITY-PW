@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription</title>
+    <style>
+        *{
+            font-family: 'Poppins',sans-serif;
+        }
+        body {
+            background-image: image-set("gambar/wallpaper.jpeg"); /* Ganti URL dengan URL gambar latar belakang Anda */
+            background-size: cover; /* Menyesuaikan gambar agar menutupi seluruh background */
+            background-position: center; /* Posisi gambar di tengah-tengah */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+        .header {
+            background-color: #4db6ac;
+            padding-bottom: 20px ;
+            display: flex;
+            align-items: center;
+            color: white;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .foto1{
+            margin-top: 10px;
+            height: 50px;
+            width: 68px;
+        }
+        .sere{
+            margin-top: 40px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 60px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        .header h1 {
+            margin: 0 auto;
+            display: inline;
+        }
+
+        .profile {
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .profile img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        .container {
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .subscription-box {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .box1, .box2 {
+            border-radius: 20px;
+            padding: 5px 40px;
+            margin: 0 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            height: 400px;
+            border: 2px solid gray;
+            text-align: left;
+            position: relative;
+        }
+
+        .pemula, .profesor {
+            text-align: center;
+            margin-bottom: 20px;
+            color: whitesmoke;
+            top: 20px;
+            font-weight: bold;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 35px;
+        }
+
+        .box1 {
+            background-color: #9bc4ac;
+        }
+
+        .box1 .pemula {
+            background-color: #9bc4ac;
+        }
+
+        .box1 h2 {
+            color: rgba(245, 245, 245, 0.671);
+            margin-top: 90px;
+            font-size: 17px;
+            font-family: 'Gill Sans','Calibri', 'Trebuchet MS', sans-serif
+        }
+
+        .pem1, .prof1 {
+            color: white;
+            font-size: 30px;
+        }
+
+        .pem2, .prof2 {
+            color: white;
+            font-size: 15px;
+        }
+
+        .box1 .subscribe-btn, .box2 .subscribe-btn {
+            display: block;
+            width: 245px;
+            padding: 15px;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: -20px; /* Menggeser tombol ke kiri */
+        }
+
+        .box1 .subscribe-btn {
+            background-color: #004d40;
+            margin-top: 90px;
+        }
+
+        .box1 .subscribe-btn:hover {
+            background-color: #00332e;
+        }
+
+        .box2 {
+            background-color: #2c7873;
+        }
+
+        .box2 .profesor {
+            background-color: #2c7873;
+        }
+
+        .box2 h2 {
+            color: rgba(245, 245, 245, 0.671);
+            margin-top: 90px;
+            font-size: 17px;
+            font-family: 'Gill Sans','Calibri', 'Trebuchet MS', sans-serif
+        }
+
+        .box2 .subscribe-btn {
+            background-color: #9bc4ac;
+            margin-top: 70px;
+        }
+
+        .box2 .subscribe-btn:hover {
+            background-color: #00332e;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <a href="homepage.html"><img src="gambar/logo-removebg-preview.png"></a>
+            <h1 class="sere">Serenity</h1>
+        </div>
+        <div class="profile">
+            <a href="profil.html"><img src="gambar/bebek.png" alt="profile"></a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Subscription</h1>
+        <div class="subscription-box">
+            <div class="box1">
+                <div class="pemula">Pemula</div> <!-- Teks "Pemula" di atas tengah -->
+                <h2 class="price"></h2>
+                <h2><span class="pem1">Rp.0</span><span class="pem2">/minggu</span><br>Cocok untuk pemula yang ingin mencoba fitur WEBSITE <br>kami<br>Total langganan: <br>1 Dokter/minggu</h2>
+                <button class="subscribe-btn">Subscription</button>
+            </div>
+            <div class="box2">
+                <div class="profesor">Profesor</div> <!-- Teks "Profesor" di atas tengah -->
+                <h2 class="price"></h2>
+                <h2><span class="prof1">Rp.30000</span><span class="prof2">/bulan</span><br>Cocok untuk para pengguna yang ingin menyelesaikan masalah sampai selesai dan konsultasi kesehatan mental <br>Total langganan: <br>3 Dokter/bulan</h2>
+                <button class="subscribe-btn">Subscription</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.subscribe-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Subscription button clicked!');
+            });
+        });
+    </script>
+</body>
+</html>
