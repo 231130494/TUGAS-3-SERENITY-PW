@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup-page</title>
+    <style>
+                html{
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgb(44, 120, 115), #FFFF);
+            background-repeat: no-repeat;
+            display: grid;
+            place-items: center;
+        }
+        *{
+            margin: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif
+        }
+        .wrapper{
+            width: 380px;
+            margin: 8% auto 0;
+            padding: 20px;
+            text-align: center;
+            background: #FFFF;
+            box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+        }
+        .form-input{
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 20px;
+            outline: none;
+        }
+        button{
+            width: 100%;
+            margin: 15px 0;
+            padding: 10px;
+            font-size: 15px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            cursor: pointer;
+            background:lightgray ;
+        }
+        .btn, .google{   
+            background-color: rgb(44, 120, 115);
+            color: white;
+        }
+        .btn:hover, .google:hover{
+            background-color: rgb(74, 193, 185);
+        }
+        hr{
+            margin: 20px 30px 0px 30px;
+            text-align: center;
+        }
+        .or{
+            width: 30px;
+            background: white;
+            margin: -12px auto 10px;
+
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+
+        .wrapper form{
+        padding: 0;
+        }
+
+        .wrapper form .field{
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+        position: relative;
+        }
+
+        .wrapper form .field input{
+        height: 100%;
+        width: 100%;
+        outline: none;
+        font-size: 17px;
+        padding-left: 20px;
+        border: 1px solid lightgray;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        }
+
+        .wrapper form .field input:focus,
+        form .field input:valid{
+        border-color: 1px solid lightgray;
+        }
+
+        .wrapper form .field label{
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        color: #999999;
+        font-weight: 400;
+        font-size: 17px;
+        pointer-events: none;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+        }
+
+        form .field input:focus ~ label,
+        form .field input:valid ~ label{
+        top: 0%;
+        font-size: 16px;
+        color: black;
+        background: #fff;
+        transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+
+</head>
+<body>
+    <div class="wrapper">
+        <img src="gambar/googlev2-removebg-preview.png" alt="">
+        <button type="button" class="google">Sign up with Google</button>
+        <hr>
+        <p class="or">OR</p>
+        <form name="dua" action="#" onsubmit="returnvalid">
+            <div class="field">
+                <input type="text" required id="nama" name="nama">
+                <label>Username</label>
+            </div>
+            <div class="field">
+                <input type="email" required id="email" name="email">
+                <label>E-mail</label>
+            </div>
+            <div class="field">
+                <input type="password" required id="password" name="password">
+                <label>Password</label>
+            </div>
+            <button type="button" class="btn">Sign-up</button>
+        </form>
+        <script>
+            document.querySelector('.btn').addEventListener('click', function(event) {
+                event.preventDefault();
+                let data_user = document.forms['dua']['nama'].value;
+                let data_password = document.forms['dua']['password'].value;
+                let data_email = document.forms['dua']['email'].value;
+
+                if (data_user.trim() === "") {
+                    alert("Nama Tidak Boleh Kosong ... !!!");
+                } else if (data_email.trim() === "") {
+                    alert("Email Tidak Boleh Kosong ... !!!");
+                } else if (data_password.trim() === "") {
+                    alert("Password Tidak Boleh Kosong ... !!!");
+                } else {
+                    window.location.href = "homepage.html";
+                }
+            });
+        </script>
+</body>
+</html>
